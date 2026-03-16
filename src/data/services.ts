@@ -6,55 +6,83 @@ export const services: Service[] = [
     icon: "Globe",
     title: "Web Applications",
     description:
-      "Custom business web applications built with structured architecture — Angular on the frontend, ASP.NET Core on the backend.",
+      "Custom web platforms designed for real business workflows — structured, maintainable, and built to operate in production.",
     highlights: [
       "Angular single-page applications",
       "ASP.NET Core Web API backend",
       "TypeScript throughout the stack",
-      "JWT authentication & session management",
-      "Deployment on cloud infrastructure",
+      "JWT authentication & user management",
+      "Scalable, production-ready architecture",
     ],
   },
   {
     id: "admin-systems",
     icon: "LayoutDashboard",
-    title: "Admin Systems & Internal Tools",
+    title: "Admin Systems & Internal Platforms",
     description:
-      "Admin panels, internal business tools and operational platforms built for the teams that run your organization.",
+      "Internal management systems and operational tools that give teams full control over their business data and workflows.",
     highlights: [
       "Role-based access control (RBAC)",
-      "CRUD interfaces & data management",
       "User and permission management",
-      "Angular Material UI components",
-      "Multi-user back-office systems",
+      "CRUD interfaces & data management",
+      "Multi-role back-office systems",
+      "CRM-style operational platforms",
     ],
   },
   {
     id: "dashboards",
     icon: "Zap",
-    title: "Dashboards & Data Interfaces",
+    title: "Dashboards & Data Analysis",
     description:
-      "Operational dashboards and reporting interfaces that give your team visibility into the data that matters.",
+      "Data dashboards and reporting interfaces that surface the operational information organizations need to make decisions.",
     highlights: [
+      "Operational KPI dashboards",
       "Data tables with filtering & sorting",
       "Report generation & export",
-      "Real-time data views",
       "Role-based data visibility",
-      "Business KPI screens",
+      "Business analytics interfaces",
     ],
   },
   {
     id: "api-integrations",
     icon: "Plug",
-    title: "API Integrations & Automation",
+    title: "API Integrations & Business Automation",
     description:
-      "Integration of external services into your systems and automation of repetitive business processes.",
+      "Integration of external services into your systems and automation of repetitive business workflows.",
     highlights: [
       "REST API development & integration",
       "Third-party service connections",
       "Background jobs & scheduled tasks",
       "Data sync between systems",
       "Process automation workflows",
+    ],
+  },
+  {
+    id: "ai-tools",
+    icon: "Brain",
+    title: "AI-Assisted Tools & Business Agents",
+    description:
+      "AI-powered assistants and workflow tools that help businesses automate knowledge work and operational decisions.",
+    highlights: [
+      "AI agents for business workflows",
+      "LLM integrations for business tasks",
+      "AI-assisted data processing",
+      "Workflow automation with AI",
+      "Practical AI inside business systems",
+    ],
+  },
+  {
+    id: "cloud-devops",
+    icon: "Wrench",
+    title: "Deployment & Cloud Infrastructure",
+    description:
+      "Deploying and operating applications using cloud environments, CI/CD pipelines, and production infrastructure.",
+    highlights: [
+      "Cloud deployment (AWS, Vercel)",
+      "CI/CD pipeline setup",
+      "Docker-based environments",
+      "Linux server management",
+      "Production build & release automation",
     ],
   },
 ];

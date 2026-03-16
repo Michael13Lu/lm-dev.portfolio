@@ -5,7 +5,7 @@ export const siteConfig = {
   name: "Michael Lu",
   title: "Michael Lu — Business Systems & Full-Stack Developer",
   description:
-    "I build practical business software: internal systems, dashboards, admin panels, and automation tools that help organizations work better.",
+    "I build practical business software: internal systems, dashboards, admin platforms, automation tools, and AI-assisted solutions that help organizations work better.",
   url: "https://lm-dev-portfolio.vercel.app",
   tagline: "Practical software that solves real business problems.",
   email: "",
@@ -19,23 +19,29 @@ export const siteConfig = {
     twitter: "",
   },
 
-  // Contact / booking link
+  // Contact link
   bookingUrl: "/contact",
 
   // SEO
   keywords: [
-    "business software developer",
+    "business systems developer",
     "full-stack developer",
     "Angular developer",
     "ASP.NET Core developer",
-    "admin panel development",
+    "admin systems",
     "internal tools",
-    "business dashboard",
-    "REST API development",
-    "role-based access control",
+    "dashboards",
+    "data analysis",
+    "API integrations",
+    "process automation",
+    "CRM systems",
+    "AI-assisted tools",
+    "AI agents",
+    "cloud deployment",
+    "CI/CD",
     "TypeScript developer",
-    "Israel developer",
     "C# developer",
+    "Israel developer",
   ],
 
   // Open Graph image (place in /public)
