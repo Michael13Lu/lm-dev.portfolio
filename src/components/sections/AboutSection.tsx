@@ -6,22 +6,22 @@ const values = [
   {
     title: "Business-first thinking",
     description:
-      "I don't just write code — I understand your goals and deliver software that moves your business forward.",
+      "I focus on what the software needs to do for the business — not just on making the code work technically.",
   },
   {
-    title: "Clean, maintainable code",
+    title: "Structured, maintainable code",
     description:
-      "Every project is built to last. Clear architecture, good documentation, and no unnecessary complexity.",
+      "Clean architecture, clear separation of concerns, and code that the next developer can understand.",
   },
   {
-    title: "Transparent communication",
+    title: "Practical over complicated",
     description:
-      "You're never left in the dark. Regular updates, honest timelines, and clear progress reports.",
+      "I choose solutions that fit the problem. No unnecessary layers, no over-engineering.",
   },
   {
     title: "Reliable delivery",
     description:
-      "I've built software across industries for 8 years. I know what it takes to ship on time and on budget.",
+      "Clear communication, honest progress updates, and software that works as described.",
   },
 ];
 
@@ -37,20 +37,20 @@ export function AboutSection() {
               <div className="w-full aspect-square max-w-sm mx-auto lg:mx-0 rounded-2xl bg-gradient-to-br from-indigo-900/40 to-[#0d0d1f] border border-white/10 flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-20 h-20 rounded-full bg-indigo-500/20 border border-indigo-500/30 mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-3xl font-bold text-indigo-400">AM</span>
+                    <span className="text-3xl font-bold text-indigo-400">ML</span>
                   </div>
-                  <p className="text-slate-400 text-sm">Alex Morgan</p>
-                  <p className="text-slate-600 text-xs mt-1">Full-Stack Developer</p>
+                  <p className="text-slate-400 text-sm">Michael Lu</p>
+                  <p className="text-slate-600 text-xs mt-1">Full-Stack Developer · Israel</p>
                 </div>
 
                 {/* Floating stat cards */}
                 <div className="absolute -bottom-4 -right-4 px-4 py-3 rounded-xl border border-white/10 bg-[#0d0d1f]/90 backdrop-blur text-center shadow-xl">
-                  <p className="text-2xl font-bold text-white">8+</p>
-                  <p className="text-xs text-slate-500">Years experience</p>
+                  <p className="text-2xl font-bold text-white">Angular</p>
+                  <p className="text-xs text-slate-500">+ ASP.NET Core</p>
                 </div>
                 <div className="absolute -top-4 -left-4 px-4 py-3 rounded-xl border border-indigo-500/20 bg-indigo-950/80 backdrop-blur text-center shadow-xl">
-                  <p className="text-2xl font-bold text-white">50+</p>
-                  <p className="text-xs text-slate-500">Projects shipped</p>
+                  <p className="text-2xl font-bold text-white">Open</p>
+                  <p className="text-xs text-slate-500">For projects</p>
                 </div>
               </div>
             </div>
@@ -62,23 +62,23 @@ export function AboutSection() {
               About me
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-5">
-              A developer who takes your business seriously.
+              A developer who builds software that solves real problems.
             </h2>
             <div className="space-y-4 text-slate-400 leading-relaxed mb-8">
               <p>
-                I&apos;m Alex — a freelance full-stack developer with 8 years of experience building
-                web applications, internal tools, and data-driven systems for businesses across
-                multiple industries.
+                I&apos;m Michael — a full-stack developer based in Israel focused on building
+                practical business software. My core stack is Angular on the frontend and
+                ASP.NET Core (C#) on the backend.
               </p>
               <p>
-                I started as a backend developer, grew into full-stack, and over the years I&apos;ve
-                developed a strong eye for product thinking, system design, and turning complex
-                requirements into clean, working software.
+                I work on internal systems, admin panels, business dashboards, and
+                role-based platforms — the kind of software that organizations use to manage
+                their operations. I pay attention to how the business actually works, not
+                just what the ticket says.
               </p>
               <p>
-                My clients range from early-stage startups to established companies. What they have
-                in common is that they needed reliable software built by someone who understood their
-                business — not just their ticket list.
+                I also work on API integrations, background automation, and AI-assisted
+                tooling — connecting systems and reducing manual work where it makes sense.
               </p>
             </div>
 

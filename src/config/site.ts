@@ -1,39 +1,41 @@
 /**
- * Site-wide configuration — update these values with your real information.
+ * Site-wide configuration — Michael Lu personal portfolio.
  */
 export const siteConfig = {
-  name: "Alex Morgan",
-  title: "Alex Morgan — Freelance Full-Stack Developer",
+  name: "Michael Lu",
+  title: "Michael Lu — Business Systems & Full-Stack Developer",
   description:
-    "I build clean, scalable web applications, admin systems, dashboards, and AI-assisted tools for businesses that need reliable software done right.",
-  url: "https://alexmorgan.dev",
-  tagline: "Building software that works for your business.",
-  email: "hello@alexmorgan.dev",
-  location: "Remote — Worldwide",
-  availability: "Available for new projects",
+    "I build practical business software: internal systems, dashboards, admin panels, and automation tools that help organizations work better.",
+  url: "https://lm-dev-portfolio.vercel.app",
+  tagline: "Practical software that solves real business problems.",
+  email: "",
+  location: "Israel",
+  availability: "Available for freelance projects and collaborations",
 
   // Social links
   socials: {
-    github: "https://github.com/alexmorgan",
-    linkedin: "https://linkedin.com/in/alexmorgan",
-    twitter: "https://twitter.com/alexmorgan",
+    github: "https://github.com/Michael13Lu",
+    linkedin: "",
+    twitter: "",
   },
 
-  // Calendly / booking link (optional)
-  bookingUrl: "https://calendly.com/alexmorgan",
+  // Contact / booking link
+  bookingUrl: "/contact",
 
   // SEO
   keywords: [
-    "freelance developer",
+    "business software developer",
     "full-stack developer",
-    "web application development",
-    "Next.js developer",
-    "React developer",
-    "admin dashboard",
-    "API integration",
-    "business software",
-    "AI integration",
+    "Angular developer",
+    "ASP.NET Core developer",
+    "admin panel development",
+    "internal tools",
+    "business dashboard",
+    "REST API development",
+    "role-based access control",
     "TypeScript developer",
+    "Israel developer",
+    "C# developer",
   ],
 
   // Open Graph image (place in /public)

@@ -1,23 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Calendar } from "lucide-react";
+import { ArrowRight, CheckCircle, Mail } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/config/site";
 
 const stats = [
-  { value: "50+", label: "Projects delivered" },
-  { value: "8yr", label: "Experience" },
-  { value: "100%", label: "Client satisfaction" },
+  { value: "Angular", label: "Primary frontend" },
+  { value: ".NET", label: "Backend stack" },
+  { value: "Israel", label: "Based in" },
 ];
 
 const floatingFeatures = [
-  "Web Applications",
-  "Admin Dashboards",
-  "API Integrations",
-  "AI Solutions",
+  "Admin Panels & Internal Systems",
+  "Business Dashboards",
+  "REST API Development",
+  "Role-Based Access Control",
+  "Internal Business Tools",
   "Process Automation",
-  "Internal Tools",
 ];
 
 export function HeroSection() {
@@ -64,10 +64,10 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.08] mb-6"
             >
-              I build software{" "}
+              I build practical{" "}
               <span className="relative">
                 <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-indigo-300 bg-clip-text text-transparent">
-                  that works
+                  business systems
                 </span>
                 <motion.span
                   className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-indigo-500/0 via-indigo-400/60 to-indigo-500/0"
@@ -76,7 +76,7 @@ export function HeroSection() {
                   transition={{ delay: 0.8, duration: 0.8 }}
                 />
               </span>{" "}
-              for your business.
+              and web applications.
             </motion.h1>
 
             {/* Sub-headline */}
@@ -86,8 +86,8 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg text-slate-400 leading-relaxed mb-8 max-w-lg"
             >
-              Freelance full-stack developer specialising in web applications, admin systems,
-              dashboards, and AI-assisted tools. Clean code. Real results.
+              Angular + ASP.NET Core developer focused on admin systems, dashboards,
+              API integrations and business process automation.
             </motion.p>
 
             {/* CTAs */}
@@ -97,12 +97,12 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-3 mb-12"
             >
-              <Button href="/contact" size="lg">
-                Start a project
+              <Button href="/projects" size="lg">
+                View Projects
                 <ArrowRight size={18} />
               </Button>
-              <Button href="/projects" size="lg" variant="secondary">
-                View my work
+              <Button href="/contact" size="lg" variant="secondary">
+                Work With Me
               </Button>
             </motion.div>
 
@@ -156,12 +156,10 @@ export function HeroSection() {
                 <div className="mt-7 pt-6 border-t border-white/6">
                   <a
                     href={siteConfig.bookingUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors group"
                   >
-                    <Calendar size={15} className="text-indigo-400" />
-                    Book a free discovery call
+                    <Mail size={15} className="text-indigo-400" />
+                    Get in touch
                     <ArrowRight size={14} className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                   </a>
                 </div>
@@ -173,7 +171,7 @@ export function HeroSection() {
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -top-4 -right-4 px-3.5 py-2 rounded-xl border border-indigo-500/30 bg-indigo-950/80 backdrop-blur text-xs font-semibold text-indigo-300 shadow-xl shadow-indigo-950/60"
               >
-                Full-Stack · AI · Automation
+                Angular · ASP.NET Core · SQL
               </motion.div>
             </div>
           </motion.div>
