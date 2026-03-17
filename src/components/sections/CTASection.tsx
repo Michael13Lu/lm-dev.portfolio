@@ -1,45 +1,46 @@
-import { ArrowRight, Calendar } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { siteConfig } from "@/config/site";
 
 export function CTASection() {
   return (
-    <section className="py-24 sm:py-32">
+    <section className="py-28 sm:py-36">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
-          <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-950/60 via-[#0d0d1f] to-[#080812] overflow-hidden p-10 sm:p-16 text-center">
-            {/* Glow */}
+          <div className="relative rounded-3xl border border-white/8 bg-white/[0.02] overflow-hidden px-10 py-20 sm:px-20 sm:py-28 text-center">
+            {/* Glows */}
             <div
               aria-hidden
-              className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo-600/15 rounded-full blur-[80px] pointer-events-none"
+              className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-indigo-600/14 rounded-full blur-[80px] pointer-events-none"
             />
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-500/40 to-transparent" />
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-500/35 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/6 to-transparent" />
 
             <div className="relative">
-              <p className="text-indigo-400 text-sm font-semibold tracking-widest uppercase mb-4">
+              <p className="text-indigo-400 text-xs font-semibold tracking-widest uppercase mb-5">
                 Let&apos;s work together
               </p>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-5 max-w-2xl mx-auto">
-                Need a system built right?
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-5 max-w-2xl mx-auto leading-[1.05]">
+                Let&apos;s build your system.
               </h2>
-              <p className="text-slate-400 text-lg leading-relaxed max-w-xl mx-auto mb-8">
-                Tell me what you&apos;re solving. I&apos;ll tell you exactly how I&apos;d approach it — clearly, directly, no sales pitch.
+              <p className="text-slate-400 text-lg leading-relaxed max-w-lg mx-auto mb-10">
+                Tell me what you&apos;re solving. I&apos;ll tell you how I&apos;d approach it — directly, clearly, no sales pitch.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button href="/contact" size="lg">
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-indigo-600 text-white font-medium text-base hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-900/40 active:scale-[0.98]"
+                >
                   Start a conversation
                   <ArrowRight size={18} />
-                </Button>
-                <Button
-                  href={siteConfig.bookingUrl}
-                  external
-                  size="lg"
-                  variant="secondary"
+                </Link>
+                <Link
+                  href="/projects"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-white/10 bg-white/5 text-slate-300 font-medium text-base hover:bg-white/8 hover:text-white transition-colors active:scale-[0.98]"
                 >
-                  <Calendar size={16} />
-                  Book a free call
-                </Button>
+                  See my work first
+                </Link>
               </div>
             </div>
           </div>

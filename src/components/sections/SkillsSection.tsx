@@ -1,59 +1,61 @@
 import { skillGroups, techStack } from "@/data/skills";
-import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
 
-function SkillBar({ level }: { level: number }) {
-  const pct = (level / 5) * 100;
+function LevelDots({ level }: { level: number }) {
   return (
-    <div className="w-16 h-1.5 rounded-full bg-white/6 overflow-hidden">
-      <div
-        className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-violet-400"
-        style={{ width: `${pct}%` }}
-      />
+    <div className="flex gap-1">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <div
+          key={i}
+          className={`w-1.5 h-1.5 rounded-full ${i < level ? "bg-indigo-400" : "bg-white/10"}`}
+        />
+      ))}
     </div>
   );
 }
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="py-24 sm:py-32">
+    <section id="skills" className="py-28 sm:py-36">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection>
+        <div className="border-t border-white/6 mb-20" />
+
+        <AnimatedSection className="mb-16">
           <SectionHeading
-            eyebrow="Expertise"
-            title="The tools I use to get it done"
-            description="A practical set of technologies — chosen for reliability, performance, and developer experience."
+            eyebrow="Stack"
+            title="The tools I use daily"
+            description="Chosen for reliability and production-readiness — not trends."
           />
         </AnimatedSection>
 
-        <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-14">
+        <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {skillGroups.map((group) => (
             <StaggerItem key={group.category}>
-              <Card className="h-full">
-                <p className="text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-5">
+              <div className="rounded-2xl border border-white/8 bg-white/[0.025] p-5 h-full">
+                <p className="text-[10px] font-semibold text-indigo-400 uppercase tracking-widest mb-5">
                   {group.category}
                 </p>
-                <ul className="space-y-3.5">
+                <ul className="space-y-3">
                   {group.skills.map((skill) => (
                     <li key={skill.name} className="flex items-center justify-between gap-4">
                       <span className="text-sm text-slate-300">{skill.name}</span>
-                      <SkillBar level={skill.level} />
+                      <LevelDots level={skill.level} />
                     </li>
                   ))}
                 </ul>
-              </Card>
+              </div>
             </StaggerItem>
           ))}
         </StaggerContainer>
 
-        {/* Tech cloud */}
-        <AnimatedSection delay={0.2} className="mt-12">
-          <div className="flex flex-wrap justify-center gap-2.5">
+        {/* Tech tag cloud */}
+        <AnimatedSection delay={0.2} className="mt-10">
+          <div className="flex flex-wrap justify-center gap-2">
             {techStack.map((tech) => (
               <span
                 key={tech}
-                className="px-3.5 py-1.5 rounded-full border border-white/8 bg-white/[0.03] text-slate-400 text-xs font-medium hover:text-white hover:border-indigo-500/30 transition-colors cursor-default"
+                className="px-3.5 py-1.5 rounded-full border border-white/8 bg-white/[0.02] text-slate-500 text-xs font-medium hover:text-slate-300 hover:border-white/14 transition-colors cursor-default"
               >
                 {tech}
               </span>

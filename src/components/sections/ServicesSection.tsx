@@ -1,15 +1,5 @@
-import {
-  Globe,
-  LayoutDashboard,
-  Plug,
-  Zap,
-  Brain,
-  Wrench,
-  ShieldCheck,
-  BarChart3,
-} from "lucide-react";
+import { Globe, LayoutDashboard, Plug, Zap, Brain, ShieldCheck, BarChart3 } from "lucide-react";
 import { services } from "@/data/services";
-import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
 
@@ -19,53 +9,47 @@ const iconMap: Record<string, React.ElementType> = {
   Plug,
   Zap,
   Brain,
-  Wrench,
   ShieldCheck,
   BarChart3,
 };
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-24 sm:py-32">
+    <section id="services" className="py-28 sm:py-36">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection>
-          <SectionHeading
-            eyebrow="What I do"
-            title="Services built around your business"
-            description="I specialise in practical software solutions that solve real problems — not just code for the sake of it."
-          />
-        </AnimatedSection>
+        <div className="grid lg:grid-cols-[1fr_2fr] gap-16 items-start">
+          {/* Left — heading */}
+          <AnimatedSection direction="left" className="lg:sticky lg:top-32">
+            <SectionHeading
+              eyebrow="Services"
+              title="What I build for businesses"
+              description="Not generic web development — concrete systems that solve operational problems and keep working reliably."
+              align="left"
+            />
+          </AnimatedSection>
 
-        <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-14">
-          {services.map((service) => {
-            const Icon = iconMap[service.icon] ?? Globe;
-            return (
-              <StaggerItem key={service.id}>
-                <Card hover accent className="h-full flex flex-col">
-                  {/* Icon */}
-                  <div className="w-10 h-10 rounded-xl bg-indigo-500/12 border border-indigo-500/20 flex items-center justify-center mb-4">
-                    <Icon size={18} className="text-indigo-400" />
+          {/* Right — cards grid */}
+          <StaggerContainer className="grid sm:grid-cols-2 gap-4">
+            {services.map((service) => {
+              const Icon = iconMap[service.icon] ?? Globe;
+              return (
+                <StaggerItem key={service.id}>
+                  <div className="group rounded-2xl border border-white/8 bg-white/[0.025] p-6 h-full hover:border-indigo-500/25 hover:bg-white/[0.04] transition-all duration-300">
+                    <div className="w-9 h-9 rounded-xl bg-indigo-500/10 border border-indigo-500/18 flex items-center justify-center mb-5">
+                      <Icon size={17} className="text-indigo-400" />
+                    </div>
+                    <h3 className="text-white font-semibold text-[15px] mb-2.5 group-hover:text-indigo-200 transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-slate-500 text-sm leading-relaxed">
+                      {service.description}
+                    </p>
                   </div>
-
-                  <h3 className="text-white font-semibold text-base mb-2">{service.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-5 flex-1">
-                    {service.description}
-                  </p>
-
-                  {/* Highlights */}
-                  <ul className="space-y-1.5">
-                    {service.highlights.map((h) => (
-                      <li key={h} className="text-xs text-slate-500 flex items-start gap-2">
-                        <span className="mt-1 w-1 h-1 rounded-full bg-indigo-500 shrink-0" />
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-                </Card>
-              </StaggerItem>
-            );
-          })}
-        </StaggerContainer>
+                </StaggerItem>
+              );
+            })}
+          </StaggerContainer>
+        </div>
       </div>
     </section>
   );

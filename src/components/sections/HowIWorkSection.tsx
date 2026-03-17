@@ -1,70 +1,87 @@
-import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
+import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const steps = [
   {
     number: "01",
-    title: "Understand the business first",
+    title: "Understand",
     description:
-      "I start by learning the actual process — not just the feature list. Who uses the system? What decisions does it support? Where does complexity live? This prevents building the wrong thing correctly.",
+      "I learn the actual business process — who uses it, what decisions it supports, and where complexity really lives. This prevents building the wrong thing correctly.",
   },
   {
     number: "02",
-    title: "Define the system boundaries",
+    title: "Design",
     description:
-      "Before any code, I map out the data model, user roles, access rules, and integration points. Clear structure up front means less rework later and a codebase that can grow without falling apart.",
+      "Before any code: data model, user roles, access rules, integration points. Clear architecture up front means less rework and a system that can grow.",
   },
   {
     number: "03",
-    title: "Build iteratively with working software",
+    title: "Build",
     description:
-      "I deliver in working increments — not a big reveal at the end. Each iteration is functional, testable, and aligned with real usage. You see progress early and can redirect before it matters.",
+      "I deliver in working increments — not a big reveal at the end. You see real progress early and can redirect before it matters.",
   },
   {
     number: "04",
-    title: "Focus on how it actually gets used",
+    title: "Deliver",
     description:
-      "Internal tools fail when they ignore the real user. I pay attention to the daily workflows, edge cases, and error conditions that business users actually encounter — not just the happy path.",
-  },
-  {
-    number: "05",
-    title: "Communicate clearly throughout",
-    description:
-      "I keep you informed at every stage — what's done, what's next, and when something needs a decision. No surprises. No technical jargon without explanation. Clear, direct updates.",
-  },
-  {
-    number: "06",
-    title: "Hand off properly",
-    description:
-      "Delivery doesn't end at deployment. I make sure the system is documented, the access is set up correctly, and the team knows how to use it. You own the system — I make sure you can run it.",
+      "Deployment, documentation, access setup, team handoff. Delivery doesn't end at go-live — you own the system and can run it independently.",
   },
 ];
 
 export function HowIWorkSection() {
   return (
-    <section id="how-i-work" className="py-24 sm:py-32">
+    <section id="how-i-work" className="py-28 sm:py-36">
+      {/* Subtle section separator */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection>
+        <div className="border-t border-white/6 mb-20" />
+
+        <AnimatedSection className="mb-16">
           <SectionHeading
             eyebrow="Process"
-            title="How I work"
-            description="Building internal systems is as much about process as it is about code. Here's how I approach every engagement."
+            title="How every project runs"
+            description="Clear process means fewer surprises, better decisions, and software that actually works for the people using it."
           />
         </AnimatedSection>
 
-        <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
-          {steps.map((step) => (
-            <StaggerItem key={step.number}>
-              <div className="relative rounded-2xl border border-white/8 bg-white/[0.02] p-6 h-full hover:border-white/14 hover:bg-white/[0.035] transition-all duration-300">
-                <span className="text-4xl font-black text-indigo-500/20 leading-none block mb-4">
-                  {step.number}
-                </span>
-                <h3 className="text-white font-semibold text-base mb-2">{step.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{step.description}</p>
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+        {/* Steps */}
+        <div className="relative">
+          {/* Connector line (desktop) */}
+          <div className="hidden lg:block absolute top-8 left-[calc(12.5%+1rem)] right-[calc(12.5%+1rem)] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+          <AnimatedSection>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {steps.map((step, i) => (
+                <div key={step.number} className="relative flex flex-col">
+                  {/* Number circle */}
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-10 h-10 rounded-full border border-indigo-500/30 bg-indigo-500/8 flex items-center justify-center shrink-0">
+                      <span className="text-xs font-bold text-indigo-400">{step.number}</span>
+                    </div>
+                    {/* Mobile connector */}
+                    {i < steps.length - 1 && (
+                      <div className="lg:hidden flex-1 h-px bg-white/8" />
+                    )}
+                  </div>
+
+                  <h3 className="text-white font-semibold text-base mb-2">{step.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
+
+        {/* Bottom note */}
+        <AnimatedSection delay={0.2} className="mt-16">
+          <div className="border-t border-white/6 pt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <p className="text-slate-500 text-sm max-w-lg">
+              I keep you informed at every stage — what&apos;s done, what&apos;s next, and when something needs a decision. No surprises, no technical jargon without explanation.
+            </p>
+            <span className="shrink-0 text-xs text-indigo-400 border border-indigo-500/20 bg-indigo-500/6 px-3 py-1.5 rounded-full">
+              Clear communication throughout
+            </span>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );

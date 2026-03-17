@@ -1,191 +1,163 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/config/site";
 
-const stats = [
-  { value: "Angular", label: "Primary frontend" },
-  { value: ".NET", label: "Backend stack" },
-  { value: "Remote", label: "Available worldwide" },
-];
-
-const floatingFeatures = [
-  "Internal Admin Systems & Platforms",
-  "Role & Permission-Based Access Control",
-  "Business Dashboards & Reporting",
-  "Workflow & Approval Automation",
-  "API Integrations & Data Pipelines",
-  "AI-Assisted Internal Tools",
-];
+function DashboardMock() {
+  const bars = [38, 52, 42, 70, 48, 84, 63, 76, 54, 91, 68, 82];
+  return (
+    <div className="relative rounded-2xl border border-white/10 bg-[#07071a] overflow-hidden shadow-2xl shadow-black/70">
+      <div className="flex items-center gap-3 px-5 py-3.5 border-b border-white/6 bg-white/[0.018]">
+        <div className="flex gap-1.5">
+          <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+          <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+          <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+        </div>
+        <div className="mx-auto flex items-center gap-2 px-4 py-1 rounded-md bg-white/[0.04] border border-white/6">
+          <div className="w-1.5 h-1.5 rounded-full bg-indigo-400/60" />
+          <span className="text-[11px] text-slate-500 font-mono">ops-platform / dashboard</span>
+        </div>
+        <div className="w-16" />
+      </div>
+      <div className="p-5 space-y-4">
+        <div className="grid grid-cols-4 gap-3">
+          {[
+            { label: "Active Users", value: "1,248", delta: "+12%", color: "text-emerald-400" },
+            { label: "Tasks Done", value: "3,892", delta: "+8%", color: "text-emerald-400" },
+            { label: "Pending Review", value: "17", delta: "3 overdue", color: "text-amber-400" },
+            { label: "Uptime", value: "99.9%", delta: "Stable", color: "text-indigo-400" },
+          ].map((s) => (
+            <div key={s.label} className="rounded-xl border border-white/6 bg-white/[0.025] px-3.5 py-3">
+              <p className="text-[10px] text-slate-600 mb-1.5">{s.label}</p>
+              <p className="text-white font-bold text-lg leading-none mb-2">{s.value}</p>
+              <span className={`text-[10px] font-medium ${s.color}`}>{s.delta}</span>
+            </div>
+          ))}
+        </div>
+        <div className="grid grid-cols-5 gap-3">
+          <div className="col-span-3 rounded-xl border border-white/6 bg-white/[0.02] p-4">
+            <div className="flex items-center justify-between mb-3">
+              <p className="text-[11px] text-slate-400 font-medium">System Activity</p>
+              <div className="flex gap-0.5">
+                {["24h", "7d", "30d"].map((t, i) => (
+                  <span key={t} className={`text-[9px] px-2 py-0.5 rounded ${i === 1 ? "bg-indigo-500/20 text-indigo-400" : "text-slate-600"}`}>{t}</span>
+                ))}
+              </div>
+            </div>
+            <div className="flex items-end gap-1 h-14">
+              {bars.map((h, i) => (
+                <div
+                  key={i}
+                  className="flex-1 rounded-t-sm"
+                  style={{
+                    height: `${h}%`,
+                    background: i >= 9 ? "rgba(99,102,241,0.75)" : i >= 6 ? "rgba(99,102,241,0.35)" : "rgba(99,102,241,0.15)",
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="col-span-2 rounded-xl border border-white/6 bg-white/[0.02] overflow-hidden">
+            <div className="px-3.5 py-2.5 border-b border-white/5 flex items-center gap-2">
+              <div className="h-2 w-14 rounded bg-white/8" />
+              <div className="ml-auto text-[9px] text-indigo-400 bg-indigo-500/10 px-1.5 py-0.5 rounded">RBAC</div>
+            </div>
+            {[
+              { role: "Admin", color: "bg-indigo-500/25 text-indigo-400" },
+              { role: "Manager", color: "bg-emerald-500/20 text-emerald-400" },
+              { role: "Operator", color: "bg-white/6 text-slate-500" },
+            ].map(({ role, color }) => (
+              <div key={role} className="flex items-center gap-2.5 px-3.5 py-2.5 border-b border-white/[0.03] last:border-0">
+                <div className="w-5 h-5 rounded-full bg-white/8 shrink-0" />
+                <div className="h-2 rounded bg-white/6 flex-1" />
+                <span className={`text-[9px] px-1.5 py-0.5 rounded ${color}`}>{role}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" />
+    </div>
+  );
+}
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background glow orbs */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-      >
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-indigo-600/12 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-violet-600/8 rounded-full blur-[100px]" />
-        <div className="absolute top-1/3 right-0 w-[300px] h-[300px] bg-cyan-500/6 rounded-full blur-[80px]" />
-        {/* Subtle grid */}
+    <section className="relative flex flex-col items-center justify-center overflow-hidden pt-24 pb-0 min-h-screen">
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-indigo-600/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/3 right-0 w-[350px] h-[350px] bg-violet-600/6 rounded-full blur-[120px]" />
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.022]"
           style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)`,
+            backgroundSize: "80px 80px",
           }}
         />
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left — Main content */}
-          <div>
-            {/* Availability badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/8 text-emerald-400 text-xs font-medium mb-6"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              {siteConfig.availability}
-            </motion.div>
+      <div className="relative w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/8 text-emerald-400 text-xs font-medium mb-8"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          {siteConfig.availability}
+        </motion.div>
 
-            {/* Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.08] mb-6"
-            >
-              I build{" "}
-              <span className="relative">
-                <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-indigo-300 bg-clip-text text-transparent">
-                  business systems
-                </span>
-                <motion.span
-                  className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-indigo-500/0 via-indigo-400/60 to-indigo-500/0"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ delay: 0.8, duration: 0.8 }}
-                />
-              </span>
-              {", dashboards,"}
-              <br />
-              {"and internal tools."}
-            </motion.h1>
+        <motion.h1
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.08 }}
+          className="text-5xl sm:text-6xl lg:text-[4.75rem] font-bold text-white tracking-tight leading-[1.05] mb-6"
+        >
+          Internal systems,{" "}
+          <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-indigo-300 bg-clip-text text-transparent">
+            dashboards,
+          </span>
+          <br />
+          and automation tools.
+        </motion.h1>
 
-            {/* Sub-headline */}
-            <motion.p
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg text-slate-400 leading-relaxed mb-3 max-w-lg"
-            >
-              I design and build the internal software that keeps businesses running — admin platforms,
-              access control systems, operational dashboards, and workflow automation.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-              className="text-sm text-slate-500 leading-relaxed mb-8 max-w-lg"
-            >
-              End-to-end ownership: from business requirements to deployed, production-ready systems.
-            </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, delay: 0.18 }}
+          className="text-lg sm:text-xl text-slate-400 leading-relaxed max-w-2xl mb-10"
+        >
+          I build the backend of your business — admin platforms, access control, reporting tools,
+          and workflow automation. End-to-end. Production-ready. Remote.
+        </motion.p>
 
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-3 mb-12"
-            >
-              <Button href="/projects" size="lg">
-                View Projects
-                <ArrowRight size={18} />
-              </Button>
-              <Button href="/contact" size="lg" variant="secondary">
-                Work With Me
-              </Button>
-            </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.28 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
+        >
+          <Button href="/contact" size="lg">
+            Start a conversation
+            <ArrowRight size={17} />
+          </Button>
+          <Button href="/projects" size="lg" variant="secondary">
+            View my work
+          </Button>
+        </motion.div>
 
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex gap-8"
-            >
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <p className="text-2xl font-bold text-white">{stat.value}</p>
-                  <p className="text-xs text-slate-500 mt-0.5">{stat.label}</p>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Right — Feature card */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="hidden lg:block"
-          >
-            <div className="relative">
-              {/* Main card */}
-              <div className="relative rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm p-8 overflow-hidden">
-                {/* Card top glow */}
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" />
-
-                <p className="text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-5">
-                  What I build
-                </p>
-                <ul className="space-y-3">
-                  {floatingFeatures.map((feature, i) => (
-                    <motion.li
-                      key={feature}
-                      initial={{ opacity: 0, x: 16 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.5 + i * 0.07, duration: 0.4 }}
-                      className="flex items-center gap-3 text-slate-300 text-sm"
-                    >
-                      <CheckCircle size={15} className="text-indigo-400 shrink-0" />
-                      {feature}
-                    </motion.li>
-                  ))}
-                </ul>
-
-                <div className="mt-7 pt-6 border-t border-white/6">
-                  <a
-                    href={siteConfig.bookingUrl}
-                    className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors group"
-                  >
-                    <Mail size={15} className="text-indigo-400" />
-                    Get in touch
-                    <ArrowRight size={14} className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                  </a>
-                </div>
-              </div>
-
-              {/* Floating accent badge */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 px-3.5 py-2 rounded-xl border border-indigo-500/30 bg-indigo-950/80 backdrop-blur text-xs font-semibold text-indigo-300 shadow-xl shadow-indigo-950/60"
-              >
-                Angular · ASP.NET Core · AI
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 56 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.42 }}
+          className="relative w-full"
+        >
+          <div className="absolute -inset-x-8 -top-4 h-16 bg-indigo-600/12 blur-3xl rounded-full pointer-events-none" />
+          <DashboardMock />
+          <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#080812] to-transparent pointer-events-none rounded-b-2xl" />
+        </motion.div>
       </div>
     </section>
   );
