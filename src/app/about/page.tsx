@@ -5,7 +5,7 @@ import { CTASection } from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Alex Morgan — a freelance full-stack developer with 8+ years building business software, web apps, and data-driven tools.",
+    "Michael Lu — full-stack developer specialising in internal business systems, admin platforms, dashboards, and workflow automation. Available for remote projects.",
 };
 
 export default function AboutPage() {

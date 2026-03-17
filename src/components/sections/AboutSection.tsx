@@ -4,24 +4,24 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 const values = [
   {
-    title: "Systems thinking",
+    title: "Business logic first",
     description:
-      "I approach software as a system — understanding how data flows, who uses what, and how the parts fit together before writing a line of code.",
+      "Before writing code, I understand the business process — who does what, what data matters, and where the real complexity is.",
   },
   {
-    title: "Practical over complicated",
+    title: "Practical over clever",
     description:
-      "I choose the solution that fits the problem. No unnecessary abstractions, no over-engineering — just software that works reliably.",
+      "I choose the solution that fits the problem. No over-engineering — just reliable software that teams can actually work with every day.",
   },
   {
-    title: "Built for real operational use",
+    title: "Built for daily operational use",
     description:
-      "The systems I build are designed for daily use by real teams — with proper access control, maintainable code, and room to grow.",
+      "The systems I build are designed to be used by real people under real conditions — with proper access control, clear interfaces, and room to grow.",
   },
   {
-    title: "End-to-end delivery",
+    title: "End-to-end ownership",
     description:
-      "From design and development to deployment and operation — I can take a system from idea to running in production.",
+      "From gathering requirements and designing architecture to deployment and handoff — I take full responsibility for the system I deliver.",
   },
 ];
 
@@ -39,7 +39,7 @@ export function AboutSection() {
                     <span className="text-3xl font-bold text-indigo-400">ML</span>
                   </div>
                   <p className="text-slate-400 text-sm">Michael Lu</p>
-                  <p className="text-slate-600 text-xs mt-1">Full-Stack Developer · Israel</p>
+                  <p className="text-slate-600 text-xs mt-1">Full-Stack Developer · Remote</p>
                 </div>
 
                 {/* Floating stat cards */}
@@ -61,31 +61,29 @@ export function AboutSection() {
               About me
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-5">
-              A developer who builds software that organizations actually use.
+              I build software that organizations actually depend on.
             </h2>
             <div className="space-y-4 text-slate-400 leading-relaxed mb-8">
               <p>
-                I&apos;m Michael — a full-stack developer based in Israel. I build software
-                that helps organizations manage their operations and data: internal business
-                platforms, admin systems, dashboards, workflow tools, and CRM-style
-                applications.
+                I&apos;m Michael — a full-stack developer focused on internal business systems:
+                admin platforms, management tools, operational dashboards, access control systems,
+                and workflow automation. The kind of software that doesn&apos;t get showcased
+                publicly but keeps the business running.
               </p>
               <p>
-                My core stack is Angular on the frontend and ASP.NET Core with C# on the
-                backend. I work with SQL databases, REST APIs, JWT authentication, and
-                role-based access control as standard parts of the systems I build.
+                My core stack is Angular on the frontend and ASP.NET Core with C# on the backend.
+                I build with SQL Server, REST APIs, JWT authentication, and role-based access
+                control as standard parts of every system — not add-ons, but foundations.
               </p>
               <p>
-                I also work on API integrations, business process automation, data analysis
-                interfaces, and AI-assisted tools — including AI agents designed to support
-                operational workflows. On the infrastructure side, I have practical experience
-                deploying and operating applications using cloud environments, CI/CD pipelines,
-                and Docker-based setups.
+                Beyond CRUD: I handle the hard parts — multi-level permissions, complex approval
+                workflows, cross-system integrations, and business process automation. I&apos;m
+                also integrating AI into internal tools where it reduces real manual work, not
+                just for the sake of it.
               </p>
               <p>
-                My focus is always on software that has real value in daily operation —
-                maintainable, well-structured, and built to handle the actual complexity
-                of the business it serves.
+                I work remotely with clients across industries who need systems built correctly —
+                not fast prototypes, but production-grade software their teams can rely on.
               </p>
             </div>
 

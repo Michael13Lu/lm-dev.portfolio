@@ -5,6 +5,8 @@ import {
   Zap,
   Brain,
   Wrench,
+  ShieldCheck,
+  BarChart3,
 } from "lucide-react";
 import { services } from "@/data/services";
 import { Card } from "@/components/ui/Card";
@@ -18,6 +20,8 @@ const iconMap: Record<string, React.ElementType> = {
   Zap,
   Brain,
   Wrench,
+  ShieldCheck,
+  BarChart3,
 };
 
 export function ServicesSection() {

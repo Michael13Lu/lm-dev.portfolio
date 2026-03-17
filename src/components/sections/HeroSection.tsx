@@ -8,16 +8,16 @@ import { siteConfig } from "@/config/site";
 const stats = [
   { value: "Angular", label: "Primary frontend" },
   { value: ".NET", label: "Backend stack" },
-  { value: "Israel", label: "Based in" },
+  { value: "Remote", label: "Available worldwide" },
 ];
 
 const floatingFeatures = [
-  "Admin Systems & Internal Platforms",
-  "Business Dashboards & Data Analysis",
-  "Workflow & CRM-style Systems",
-  "API Integrations & Automation",
-  "AI-Assisted Tools & Agents",
-  "Cloud Deployment & CI/CD",
+  "Internal Admin Systems & Platforms",
+  "Role & Permission-Based Access Control",
+  "Business Dashboards & Reporting",
+  "Workflow & Approval Automation",
+  "API Integrations & Data Pipelines",
+  "AI-Assisted Internal Tools",
 ];
 
 export function HeroSection() {
@@ -88,8 +88,8 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg text-slate-400 leading-relaxed mb-3 max-w-lg"
             >
-              Full-stack developer focused on Angular, ASP.NET Core, data-driven platforms,
-              CRM-style systems, and business automation.
+              I design and build the internal software that keeps businesses running — admin platforms,
+              access control systems, operational dashboards, and workflow automation.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 24 }}
@@ -97,7 +97,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.25 }}
               className="text-sm text-slate-500 leading-relaxed mb-8 max-w-lg"
             >
-              Including AI agents, workflow automation, and cloud-deployed business software.
+              End-to-end ownership: from business requirements to deployed, production-ready systems.
             </motion.p>
 
             {/* CTAs */}

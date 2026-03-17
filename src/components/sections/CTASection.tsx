@@ -21,10 +21,10 @@ export function CTASection() {
                 Let&apos;s work together
               </p>
               <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-5 max-w-2xl mx-auto">
-                Have a project in mind?
+                Need a system built right?
               </h2>
               <p className="text-slate-400 text-lg leading-relaxed max-w-xl mx-auto mb-8">
-                Tell me what you&apos;re building. I&apos;ll tell you how I can help — no pressure, no commitment.
+                Tell me what you&apos;re solving. I&apos;ll tell you exactly how I&apos;d approach it — clearly, directly, no sales pitch.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button href="/contact" size="lg">

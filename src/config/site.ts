@@ -7,10 +7,10 @@ export const siteConfig = {
   description:
     "I build practical business software: internal systems, dashboards, admin platforms, automation tools, and AI-assisted solutions that help organizations work better.",
   url: "https://lm-dev-portfolio.vercel.app",
-  tagline: "Practical software that solves real business problems.",
+  tagline: "Internal systems, dashboards, and automation tools that help businesses run better.",
   email: "",
-  location: "Israel",
-  availability: "Available for freelance projects and collaborations",
+  location: "Remote — Worldwide",
+  availability: "Open to remote projects worldwide",
 
   // Social links
   socials: {
@@ -41,7 +41,8 @@ export const siteConfig = {
     "CI/CD",
     "TypeScript developer",
     "C# developer",
-    "Israel developer",
+    "remote developer",
+    "freelance full-stack developer",
   ],
 
   // Open Graph image (place in /public)

@@ -3,80 +3,80 @@ import type { Project } from "@/types";
 export const projects: Project[] = [
   {
     id: "enterprise-workflow-system",
-    title: "Enterprise Workflow System",
+    title: "Enterprise Workflow & Operations Platform",
     description:
-      "Internal business workflow platform for managing operations, tasks, and team coordination across departments.",
+      "A full internal platform replacing fragmented coordination across departments — structured workflows, task ownership, and audit trails in one system.",
     longDescription:
-      "A full-stack internal platform built with Angular and ASP.NET Core to replace fragmented manual processes. Features include structured workflow management, department-level task tracking, role-based visibility, audit trails, and an admin panel for system configuration. Secured with JWT authentication and a layered RBAC system. Designed to be maintainable and extensible for evolving business needs.",
-    tags: ["Angular", "ASP.NET Core", "C#", "SQL", "JWT", "RBAC", "Entity Framework"],
+      "The client was managing operations across several departments using a combination of spreadsheets, email chains, and disconnected tools. Tasks were falling through the cracks, there was no clear ownership, and management had no visibility into what was happening. I built a full-stack internal platform with Angular and ASP.NET Core that centralised all of this: structured workflow management, department-level task tracking, role-based visibility per team, and a full audit trail on every action. Admins can configure workflows and user permissions without touching code. JWT authentication and a layered RBAC system ensure each user sees only what they should.",
+    tags: ["Angular", "ASP.NET Core", "C#", "SQL Server", "JWT", "RBAC", "Entity Framework"],
     category: "internal-tool",
     featured: true,
     results: [
-      "Replaced fragmented manual coordination across departments",
-      "Full audit trail and role-based access per user type",
-      "Admin panel for workflow and user configuration",
+      "Replaced manual cross-department coordination with a structured, auditable system",
+      "Role-based visibility reduced data exposure and improved team focus",
+      "Admin panel allows non-technical staff to configure workflows independently",
     ],
   },
   {
     id: "admin-operations-system",
-    title: "Admin & Operations Management System",
+    title: "Back-Office Management System",
     description:
-      "Admin interface for managing business operations — users, records, permissions, and operational data in one centralized platform.",
+      "A centralised admin interface for managing users, records, roles, and operational data — built for an internal operations team handling high daily volume.",
     longDescription:
-      "Built a structured back-office management system using Angular Material and an ASP.NET Core API. Provides admin users with full control over business records: user management, role assignments, entity management with advanced filtering and pagination, data export, and activity logging. Designed for internal operations teams managing day-to-day business data.",
-    tags: ["Angular", "Angular Material", "ASP.NET Core", "C#", "SQL", "REST API", "TypeScript"],
+      "The operations team was relying on direct database access and manual exports to manage business records. This created errors, access risks, and slow turnaround. I built a structured back-office system using Angular Material and an ASP.NET Core API, giving the team a proper interface: full user management with role assignments, entity-level CRUD with advanced filtering and pagination, bulk operations, data export, and activity logging. Every action is logged and attributable to a specific user. The system is designed around the team's actual daily workflow — not a generic admin panel.",
+    tags: ["Angular", "Angular Material", "ASP.NET Core", "C#", "SQL Server", "REST API", "TypeScript"],
     category: "internal-tool",
     featured: true,
     results: [
-      "Centralized management of users, roles, and business records",
-      "Advanced filtering, sorting, and pagination on all data views",
-      "Export and reporting features for operational data",
+      "Eliminated direct database access — all operations go through a controlled interface",
+      "Advanced filtering and pagination reduced lookup time for high-volume record management",
+      "Export and reporting features replaced manual data extraction processes",
     ],
   },
   {
     id: "business-dashboard-platform",
-    title: "Business Dashboard Platform",
+    title: "Multi-Role Business Dashboard",
     description:
-      "Operational dashboards and reporting tools providing real-time visibility into business data and key performance indicators.",
+      "An operational data platform providing each user role with a tailored view of the KPIs and records relevant to their function — from executive summaries to detailed operational data.",
     longDescription:
-      "Developed a data dashboard platform connecting to a SQL backend via ASP.NET Core APIs. The interface provides role-based KPI views, filterable data grids, trend charts, and exportable reports. Each user role sees a tailored view of the data most relevant to their function — from high-level executive summaries to detailed operational records for back-office staff.",
-    tags: ["Angular", "ASP.NET Core", "SQL", "REST API", "TypeScript", "Data Analysis"],
+      "The business had data in SQL but no way to surface it in a usable form. Different teams needed different views: executives needed high-level KPI summaries, ops staff needed filterable record grids, and managers needed trend data with export capability. I built a dashboard platform connecting Angular to an ASP.NET Core API layer backed by SQL Server. Each user role gets a tailored view based on their permissions. The platform includes filterable data grids, trend charts, exportable reports in CSV format, and real-time data refresh. Roles and data visibility are controlled through the same RBAC system used across the platform.",
+    tags: ["Angular", "ASP.NET Core", "SQL Server", "REST API", "TypeScript", "Reporting"],
     category: "dashboard",
     featured: true,
     results: [
-      "Role-tailored views for different organizational levels",
-      "Exportable reports and KPI tracking",
-      "Real-time data from SQL backend via REST API",
+      "Each organizational role now has a purpose-built data view — no more generic reports",
+      "Exportable reports replaced manual data extraction requests to the dev team",
+      "Real-time KPI visibility gave management immediate operational awareness",
     ],
   },
   {
     id: "rbac-access-platform",
-    title: "Role-Based Access Platform",
+    title: "Granular Access Control System",
     description:
-      "JWT-based authentication and authorization system with granular role and permission management for multi-user business applications.",
+      "A reusable role and permission management module built as a foundation layer for multi-user internal platforms — granular, auditable, and configurable without code changes.",
     longDescription:
-      "Designed and implemented a reusable RBAC module using ASP.NET Core Identity, JWT tokens, and custom authorization middleware. Supports multiple roles, resource-level permissions, and an admin interface for managing users and their access rights. Built as a foundation layer applicable across internal business systems, ensuring secure and auditable access control.",
-    tags: ["ASP.NET Core", "C#", "JWT", "RBAC", "Authorization", "Angular", "TypeScript"],
+      "Many internal systems share the same access control problem: who can see, edit, or act on which resources? I designed and implemented a reusable RBAC module using ASP.NET Core Identity, JWT tokens, and custom authorization middleware. It supports multiple roles, resource-level permission assignments, and department or unit-scoped access rules. An admin interface lets authorised staff manage users and their access rights directly — no developer involvement required for routine permission changes. The module is built to be integrated across multiple systems and has been reused as a foundation in several subsequent projects.",
+    tags: ["ASP.NET Core", "C#", "JWT", "RBAC", "Authorization Middleware", "Angular", "TypeScript"],
     category: "web-app",
     results: [
-      "Granular permission control per resource and action",
-      "Reusable auth module integrated across multiple systems",
-      "Secure, auditable token-based session management",
+      "Granular permission control per resource type and action — read, write, approve, export",
+      "Admin-managed permissions removed the developer bottleneck from routine access changes",
+      "Reusable module integrated as a foundation layer across multiple internal systems",
     ],
   },
   {
     id: "automation-ai-business-tools",
-    title: "Automation & AI Business Tools",
+    title: "Workflow Automation & AI Integration",
     description:
-      "Automation workflows and AI-assisted tools for reducing manual work and supporting operational decision-making.",
+      "Automation of recurring manual processes and AI-assisted tools integrated into operational workflows — reducing repetitive work and supporting faster decision-making.",
     longDescription:
-      "Worked on automation and AI integration projects: connecting REST APIs between business systems, building scheduled background jobs in ASP.NET Core, automating data processing pipelines, and integrating LLM-based assistants into business workflows. Focused on practical AI use — document summarization, structured data extraction, and AI agents that assist staff with routine operational tasks.",
-    tags: ["ASP.NET Core", "C#", "REST APIs", "AI Agents", "Automation", "TypeScript", "SQL"],
+      "Several business processes were consuming disproportionate staff time: manual data entry between systems, repetitive document review, and recurring report generation. I built automation workflows using ASP.NET Core background jobs and scheduled tasks to handle recurring data processing, and integrated REST APIs to sync data between internal and external systems automatically. On the AI side, I integrated LLM-based assistants for document summarization and structured data extraction from unstructured inputs — embedded directly inside the existing internal platform, with full access control applied. The focus throughout was on measurable reduction of manual steps, not AI for its own sake.",
+    tags: ["ASP.NET Core", "C#", "REST APIs", "LLM Integration", "Background Jobs", "TypeScript", "SQL Server"],
     category: "ai",
     results: [
-      "Automated recurring data processing workflows",
-      "AI-assisted tools integrated into operational systems",
-      "Reduced manual steps in key business processes",
+      "Automated recurring data sync eliminated daily manual transfer between systems",
+      "AI-assisted document processing reduced review time on high-volume intake workflows",
+      "Scheduled reporting replaced manual exports — delivered automatically to stakeholders",
     ],
   },
 ];

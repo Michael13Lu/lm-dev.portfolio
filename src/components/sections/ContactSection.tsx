@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, Mail, MapPin, Clock } from "lucide-react";
+import { Send, Mail, Clock, Globe } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
@@ -15,9 +15,9 @@ const contactInfo = [
     href: `mailto:${siteConfig.email}`,
   },
   {
-    icon: MapPin,
-    label: "Location",
-    value: siteConfig.location,
+    icon: Globe,
+    label: "Availability",
+    value: "Remote — open to projects worldwide",
   },
   {
     icon: Clock,
@@ -67,10 +67,10 @@ export function ContactSection() {
               Get in touch
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
-              Let&apos;s talk about your project
+              Tell me about your system
             </h2>
             <p className="text-slate-400 text-lg max-w-xl mx-auto">
-              Tell me what you need. I&apos;ll read every message and respond personally within 24 hours.
+              Describe what you need to build or fix. I read every message personally and respond within 24 hours — no forms that go nowhere.
             </p>
           </div>
         </AnimatedSection>
